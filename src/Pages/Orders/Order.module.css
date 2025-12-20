@@ -1,0 +1,27 @@
+.orders {
+  padding: 20px 80px;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.orders h1 {
+  margin: 30px 0;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 10px;
+}
+
+.orders__order {
+  padding: 20px;
+  background-color: white;
+  position: relative;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .orders {
+    padding: 20px;
+  }
+}

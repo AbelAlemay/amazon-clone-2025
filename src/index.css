@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Amazon Ember", sans-serif;
+}
+
+:root {
+  --amazon-yellow: #fdd815;
+  --amazon-yellow-shade: #d49644;
+}

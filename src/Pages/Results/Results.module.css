@@ -1,0 +1,14 @@
+.products_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  justify-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.products_title {
+  font-weight: bold;
+  text-transform: capitalize;
+}

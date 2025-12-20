@@ -1,0 +1,358 @@
+/* upper header bar */
+.header {
+  background-color: rgb(28, 70, 56);
+  display: flex;
+  align-items: center;
+  position: static;
+  color: white;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 18px;
+  min-height: 60px;
+  gap: 10px;
+  flex-wrap: wrap; /* Allow wrapping for responsiveness */
+}
+
+.header_container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  /* flex: 1; Removed flex:1 so it doesn't take unnecessary space */
+}
+
+.header_delivery {
+  padding: 0 10px 0 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.header_delivery_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  font-size: 18px;
+}
+
+.header_delivery p {
+  padding: 0;
+  margin: 0;
+  color: rgb(230, 230, 230);
+  white-space: nowrap;
+}
+
+.header_delivery_span {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.header_left img {
+  width: 90px;
+  margin: 0px;
+  padding: 0px 10px 0 0;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.header_search {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Takes available space */
+  min-width: 200px; /* Minimum width before wrapping/shrinking */
+  height: 38px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.header_search:focus-within {
+  box-shadow: 0 0 0 2px #f90, 0 0 0 3px rgba(255, 153, 0, 0.5);
+}
+
+.header_search select {
+  height: 100%;
+  padding: 0 5px;
+  border: none;
+  outline: none;
+  width: auto;
+  max-width: 60px;
+  background-color: #f3f3f3;
+  border-right: 1px solid #cdcdcd;
+  color: #555;
+  font-size: 12px;
+}
+
+.header_search_input {
+  height: 100%;
+  padding: 0 10px;
+  border: none;
+  outline: none;
+  flex: 1;
+  width: auto;
+  font-size: 15px;
+}
+
+.header_search_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0px 10px;
+  background-color: #febd69;
+  color: #131921;
+  width: 45px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.header_search_icon:hover {
+  background-color: #f3a847;
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: auto; /* Push to right if space permits */
+}
+
+.header_right_language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+  gap: 4px;
+}
+
+.header_right_language img {
+  width: 20px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.header_right_language select {
+  font-size: 13px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 700;
+  appearance: none; /* Hide default arrow in some browsers if desired, but we want it */
+}
+
+.header_right_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 12px;
+}
+
+.header_right_items a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+
+.header_right_items p {
+  padding: 0;
+  margin: 0;
+  color: rgb(230, 230, 230);
+  line-height: 14px;
+}
+
+.header_right_items span {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-weight: 700;
+  line-height: 15px;
+}
+
+/* Cart Icon */
+.cart {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.cart span {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 700;
+  color: #f08804;
+  font-size: 13px;
+  width: 19px;
+  text-align: center;
+}
+
+/* Hover Effects */
+.header_right a:hover,
+.header_left a:hover,
+.header_delivery:hover,
+.header_right_language:hover {
+  outline: 1px solid white;
+  border-radius: 2px;
+}
+
+/* spacer  */
+.header_spacer {
+  height: 90px;
+}
+
+/* lower header bar */
+.lower_header {
+  background-color: #232f3e;
+  color: white;
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.lower_header_list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 500;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  height: 100%;
+}
+
+.lower_header_list::-webkit-scrollbar {
+  display: none;
+}
+
+.lower_header li {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.lower_header li a {
+  color: white;
+  text-decoration: none;
+}
+
+.lower_header li:hover {
+  border: 1px solid white;
+}
+
+.lower_header_menu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700 !important;
+}
+
+.lower_header_menu svg {
+  font-size: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header_search {
+    order: 3;
+    width: 100%;
+    min-width: 100%;
+    margin-top: 10px;
+    height: 40px;
+  }
+
+  .header_left {
+    order: 1;
+  }
+
+  .header_right {
+    order: 2;
+    margin-left: 0;
+    gap: 10px;
+  }
+
+  .header_delivery {
+    display: none;
+  }
+
+  .header_right_items p {
+    display: none;
+  }
+
+  .header_right_items span {
+    font-size: 13px;
+  }
+
+  .header_right_language {
+    display: none;
+  }
+
+  .header_spacer {
+    height: 130px;
+  }
+
+  .lower_header li {
+    display: none;
+  }
+
+  .lower_header li.lower_header_menu {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header_left img {
+    width: 70px;
+  }
+
+  .header_right_items {
+    gap: 10px;
+  }
+}
