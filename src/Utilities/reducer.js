@@ -1,7 +1,7 @@
 import { Type } from "./action.type.js";
 
 export const initialState = {
-  basket: [],
+  basket: JSON.parse(localStorage.getItem("basket")) || [],
   user: null,
 };
 
@@ -12,6 +12,10 @@ export const reducer = (state, action) => {
         (item) => item.id === action.item.id
       );
       if (!existingItem) {
+        localStorage.setItem(
+          "basket",
+          JSON.stringify([...state.basket, { ...action.item, amount: 1 }])
+        );
         return {
           ...state,
           basket: [...state.basket, { ...action.item, amount: 1 }],
@@ -22,6 +26,7 @@ export const reducer = (state, action) => {
             ? { ...item, amount: item.amount + 1 }
             : item;
         });
+        localStorage.setItem("basket", JSON.stringify(updatedBasket));
         return {
           ...state,
           basket: updatedBasket,
@@ -41,11 +46,13 @@ export const reducer = (state, action) => {
           newBasket.splice(index, 1);
         }
       }
+      localStorage.setItem("basket", JSON.stringify(newBasket));
       return {
         ...state,
         basket: newBasket,
       };
     case Type.EMPTY_BASKET:
+      localStorage.setItem("basket", JSON.stringify([]));
       return {
         ...state,
         basket: [],
@@ -59,3 +66,4 @@ export const reducer = (state, action) => {
       return state;
   }
 };
+

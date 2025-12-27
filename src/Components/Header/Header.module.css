@@ -33,10 +33,15 @@
 .header_delivery {
   padding: 0 10px 0 0;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 2px;
+}
+
+.header_delivery_text {
+  display: flex;
+}
+.header_delivery_text div {
+  margin-right: 5px;
+  padding-left: 5px;
 }
 
 .header_delivery_icon {
@@ -169,12 +174,16 @@
   font-size: 12px;
 }
 
-.header_right_items a {
+.header_right_items_signin {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
-  text-decoration: none;
+}
+
+.header_right_items_signin {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
 }
 
 .header_right_items p {

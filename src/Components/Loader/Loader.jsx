@@ -1,9 +1,10 @@
 import React from "react";
-import { PacmanLoader } from "react-spinners";
+import classes from "./loader.module.css";
+import { MoonLoader } from "react-spinners";
 function Loader() {
   return (
-    <div>
-      <PacmanLoader color="rgb(249, 218, 77)" />
+    <div className={classes.loader}>
+      <MoonLoader color="black" size={30} />
     </div>
   );
 }

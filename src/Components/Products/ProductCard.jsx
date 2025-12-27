@@ -33,7 +33,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
         <img src={product.image} alt={product.title} />
       </Link>
       <div className={classes.card_content}>
-        <h3> {product.title}</h3>
+        <h3 style={{ fontWeight: "bold" }}> {product.title}</h3>
         {renderDesc && (
           <div style={{ maxWidth: "750px" }}>{product.description}</div>
         )}

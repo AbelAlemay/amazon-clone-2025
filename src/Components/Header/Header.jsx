@@ -6,12 +6,18 @@ import classes from "./Header.module.css";
 import LowerHeader from "./LowerHeader";
 import { Link } from "react-router-dom";
 import { useDataProvider } from "../../Components/DataProvider/DataProvider";
+import { auth } from "../../Utilities/firebase";
 
 function Header() {
-  const [{ basket }, dispatch] = useDataProvider();
+  const [{ basket, user }, dispatch] = useDataProvider();
   const totalItem = basket?.reduce((amount, item) => {
     return item.amount + amount;
   }, 0);
+
+  const capitalizeFirst = (str) => {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
 
   return (
     <>
@@ -32,7 +38,24 @@ function Header() {
             </span>
 
             <div className={classes.header_delivery}>
-              <p>Deliver to</p>
+              <div className={classes.header_delivery_text}>
+                <small>Deliver to</small>
+
+                <div>
+                  {user ? (
+                    <>
+                      <b style={{ fontStyle: "italic" }}>
+                        {" "}
+                        {capitalizeFirst(user?.email?.split("@")[0])}
+                      </b>
+                      ,
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
+
               <span className={classes.header_delivery_span}>
                 <b> United States</b>
               </span>
@@ -81,9 +104,25 @@ function Header() {
             </div>
             <div className={classes.header_right_items}>
               {/* Sign In */}
-              <Link to="/signin">
-                <p>Sign In</p>
-                <span>Accounts & Lists</span>
+              <Link to={!user && "/Auth"}>
+                <div>
+                  {user ? (
+                    <>
+                      <div className={classes.header_right_items_signin}>
+                        <small>Hello,</small>
+                        <b style={{ fontStyle: "italic" }}>
+                          {capitalizeFirst(user?.email?.split("@")[0])}
+                        </b>
+                      </div>
+                      <b onClick={() => auth.signOut()}>Sign Out</b>
+                    </>
+                  ) : (
+                    <>
+                      <p> Hello, Sign In</p>
+                      <span>Accounts & Lists</span>
+                    </>
+                  )}
+                </div>
               </Link>
               {/* Orders  */}
               <Link to="/orders">
