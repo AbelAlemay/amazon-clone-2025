@@ -3,5 +3,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/amazon-clone-2025/",
+  // base: "/amazon-clone-2025/",
 });
