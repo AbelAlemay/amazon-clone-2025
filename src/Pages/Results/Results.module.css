@@ -11,4 +11,24 @@
 .products_title {
   font-weight: bold;
   text-transform: capitalize;
+  padding: 30px;
+}
+
+.products_breadcrumb {
+  padding: 0 30px 30px 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .products_container {
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .products_title {
+    padding: 20px 15px 10px 15px;
+  }
+
+  .products_breadcrumb {
+    padding: 0 15px 15px 15px;
+  }
 }

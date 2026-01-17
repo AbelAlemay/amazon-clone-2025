@@ -1,4 +1,3 @@
-
 import classes from "./Results.module.css";
 import Layout from "../../Components/Layout/Layout";
 import { useParams } from "react-router-dom";
@@ -22,8 +21,8 @@ function Results() {
   return (
     <Layout>
       <section>
-        <h1 style={{ padding: "30px" }}>{name}</h1>
-        <p style={{ padding: "30px" }}>Category / {name}</p>
+        <h1 className={classes.products_title}>{name}</h1>
+        <p className={classes.products_breadcrumb}>Category / {name}</p>
         <hr />
         <div className={classes.products_container}>
           {products?.map((item) => (

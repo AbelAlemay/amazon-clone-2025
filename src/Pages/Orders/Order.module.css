@@ -25,7 +25,13 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .orders__container {
+  .container {
     padding: 20px;
+  }
+
+  .orders__order {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
   }
 }

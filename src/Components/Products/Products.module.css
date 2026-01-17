@@ -121,6 +121,13 @@
   -webkit-line-clamp: unset;
 }
 
+@media screen and (max-width: 768px) {
+  .products_container {
+    padding: 15px;
+    gap: 20px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .products_container {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
